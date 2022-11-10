@@ -1,0 +1,22 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Employee Data</title>  
+</head>  
+<body>  
+    <h2>Created or Updated Emloyee Data Successfully </h2>
+    {% for employee in employees%}
+    <h6>ID : {{ employee.employee_id }}</h6>
+    <h6>First Name : {{ employee.first_name }}</h6>
+    <h6>Last Name : {{ employee.last_name }}</h6>
+    <h6>Email Id : {{ employee.email_id }}</h6>
+    <h6>Phone Number : {{ employee.phone_number }}</h6>
+    <h6>Date Of Birth : {{ employee.date_of_birth }}</h6>
+    
+    {% endfor %}
+
+</body>  
+<h4><a href="{% url 'home' %}">Create a new Employee </a> </h4> 
+<h4><a href="{% url 'list_employee' %}"> Get all Employee Data</a> </h4>
+</html>  

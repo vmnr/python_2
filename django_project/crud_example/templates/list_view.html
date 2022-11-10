@@ -1,0 +1,49 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  <style>
+    th {
+      border: 1px solid rgb(0, 0, 0);
+      border-color: #96d4a3;
+      border-collapse: collapse;
+      text-align: center;
+      font-weight: bold;
+      font-size: x-large;
+    }
+    td {
+        border: 1px solid rgb(0, 0, 0);
+      border-color: #96d4a3;
+      border-collapse: collapse;
+      text-align: center;
+      font-weight: bold;
+      font-size: large;
+    }
+
+    </style>
+    <meta charset="UTF-8">  
+    <title>Employee Data</title>  
+</head>  
+<body> 
+    <h2>All Employee Data </h2>
+    <table style="width:60%">
+        <th><h6>ID</h6> </th>
+        <th><h6>First Name</h6></th>
+        <th><h6>Last Name</h6></th>
+        <th><h6>Email Id</h6></th>
+        <th><h6>Phone Number</h6></th>
+        <th><h6>Date Of Birth</h6></th>
+        <th><h6>Update/Delete</h6></th>
+        {% for employee in employees%}
+        <tr style="width:50%">            
+            <td><h6>{{ employee.employee_id }}</h6></td>
+            <td><h6>{{ employee.first_name }}</h6></td>
+            <td><h6>{{ employee.last_name }}</h6></td>
+            <td><h6>{{ employee.email_id }}</h6></td>
+            <td><h6>{{ employee.phone_number }}</h6></td>
+            <td><h6>{{ employee.date_of_birth }}</h6></td>  
+            <td><h6><a href="{% url 'update_employee' employee.employee_id%}">Update</a> &nbsp; &nbsp; &nbsp; <a href="{% url 'delete_employee' employee.employee_id%}">Delete</a></h6></td>               
+        </tr>
+        {% endfor %}
+    </table> 
+</body>  
+<h4><a href="{% url 'home' %}">Create a new Employee </a> </h4> 
+</html>  

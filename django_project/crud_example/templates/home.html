@@ -1,0 +1,18 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>The Home Page</title>
+    <h1>Home Page!</h1> 
+</head>  
+<body>  
+    <h4>Create a New Employee : </h4>
+    <h6>Note: DOB in DD/MM/YYYY format</h6>
+    <form method="POST" class="post-form"  action="{% url 'create_employee'%}">  
+        {% csrf_token %}  
+        {{ form.as_p }}  
+        <button type="submit" class="save btn btn-default">Submit</button>  
+    </form>  
+    <h4><a href="{% url 'list_employee' %}"> Get all Employee Data</a> </h4>
+</body>  
+</html>  
